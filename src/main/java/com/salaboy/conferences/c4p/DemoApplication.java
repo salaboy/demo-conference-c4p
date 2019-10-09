@@ -3,36 +3,25 @@ package com.salaboy.conferences.c4p;
 import com.salaboy.conferences.c4p.model.Proposal;
 import com.salaboy.conferences.c4p.model.ProposalDecision;
 import com.salaboy.conferences.c4p.model.ProposalStatus;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.cloud.stream.messaging.Processor;
-import org.springframework.cloud.stream.messaging.Source;
-import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
 @SpringBootApplication
 @RestController
-@EnableBinding(Source.class)
 public class DemoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    @Value("${version:0}")
+    @Value("${version:0.0.0}")
     private String version;
 
     private Set<Proposal> proposals = new HashSet<>();
-
-    @Autowired
-    private Source source;
 
     @GetMapping("/info")
     public String infoWithVersion() {
@@ -56,18 +45,6 @@ public class DemoApplication {
         return proposals.stream().filter(p -> p.getId().equals(id)).findFirst();
     }
 
-    @PatchMapping("/{id}/rank/{rank}")
-    public void rank(@PathVariable("id") String id, @PathVariable("rank") Integer rank) {
-
-        Optional<Proposal> proposalOptional = proposals.stream().filter(p -> p.getId().equals(id)).findFirst();
-        if (proposalOptional.isPresent()) {
-            Proposal proposal = proposalOptional.get();
-            proposal.setRank(rank);
-            proposal.setStatus(ProposalStatus.RANKED);
-            emitEvent(">  Proposal Ranked: " + proposal);
-            proposals.add(proposal);
-        }
-    }
 
     @PatchMapping("/{id}/decision")
     public void rank(@PathVariable("id") String id, @RequestBody ProposalDecision decision) {
@@ -90,7 +67,6 @@ public class DemoApplication {
 
     private void emitEvent(String content) {
         System.out.println(content);
-        source.output().send(MessageBuilder.createMessage(content, null));
     }
 
 }

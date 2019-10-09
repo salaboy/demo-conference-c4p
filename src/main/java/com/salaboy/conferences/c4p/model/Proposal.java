@@ -10,7 +10,6 @@ public class Proposal {
     private String description;
     private String author;
     private String email;
-    private Integer rank;
     private boolean approved = false;
     private ProposalStatus status = ProposalStatus.PENDING;
 
@@ -66,14 +65,6 @@ public class Proposal {
         this.email = email;
     }
 
-    public Integer getRank() {
-        return rank;
-    }
-
-    public void setRank(Integer rank) {
-        this.rank = rank;
-    }
-
     public boolean isApproved() {
         return approved;
     }
@@ -111,9 +102,8 @@ public class Proposal {
                 ", description='" + description + '\'' +
                 ", author='" + author + '\'' +
                 ", email='" + email + '\'' +
-                ", rank=" + rank +
-                ", approved=" + approved +
-                ", status=" + status +
+                ", approved=" + approved + '\'' +
+                ", status=" + status + '\'' +
                 '}';
     }
 }
