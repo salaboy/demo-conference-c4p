@@ -56,12 +56,13 @@ public class DemoApplication {
 
     @PatchMapping("/{id}/decision")
     public void rank(@PathVariable("id") String id, @RequestBody ProposalDecision decision) {
+        emitEvent("> Proposal Approved Event ( " + ((decision.isApproved()) ? "Approved" : "Rejected") + ")");
         Optional<Proposal> proposalOptional = proposals.stream().filter(p -> p.getId().equals(id)).findFirst();
         if (proposalOptional.isPresent()) {
             Proposal proposal = proposalOptional.get();
             proposal.setApproved(decision.isApproved());
             proposal.setStatus(ProposalStatus.DECIDED);
-            emitEvent("> Proposal Approved Event ( " + ((decision.isApproved()) ? "Approved" : "Rejected") + ")");
+
             proposals.add(proposal);
             emitEvent("> Notify Speaker Event (via email: " + proposal.getEmail() + " -> " + ((decision.isApproved()) ? "Approved" : "Rejected") + ")");
             if (decision.isApproved()) {
