@@ -53,7 +53,7 @@ public class DemoApplication {
         return proposals.stream().filter(p -> p.getId().equals(id)).findFirst();
     }
 
-    @PutMapping("/{id}/decision")
+    @RequestMapping(value = "/{id}/decision", method = RequestMethod.PUT)
     public void rank(@PathVariable("id") String id, @RequestBody ProposalDecision decision) {
         emitEvent("> Proposal Approved Event ( " + ((decision.isApproved()) ? "Approved" : "Rejected") + ")");
         Optional<Proposal> proposalOptional = proposals.stream().filter(p -> p.getId().equals(id)).findFirst();
