@@ -70,6 +70,8 @@ public class DemoApplication {
 
                 restTemplate.postForEntity(agendaService, request, AgendaItem.class);
             }
+        } else {
+            emitEvent(" Proposal Not Found Event (" + id + ")");
         }
 
 
