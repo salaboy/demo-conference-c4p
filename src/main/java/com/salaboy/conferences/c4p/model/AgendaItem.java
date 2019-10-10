@@ -14,6 +14,10 @@ public class AgendaItem {
         this.talkTime = talkTime;
     }
 
+
+    public AgendaItem() {
+    }
+
     public String getTitle() {
         return title;
     }

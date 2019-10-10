@@ -68,8 +68,7 @@ public class DemoApplication {
             if (decision.isApproved()) {
                 emitEvent("> Add Proposal To Agenda Event ");
                 HttpEntity<AgendaItem> request = new HttpEntity<>(new AgendaItem(proposal.getTitle(), proposal.getAuthor(), new Date()));
-
-                restTemplate.postForEntity(agendaService, request, AgendaItem.class);
+                restTemplate.postForEntity(agendaService, request, String.class);
             }
         } else {
             emitEvent(" Proposal Not Found Event (" + id + ")");
