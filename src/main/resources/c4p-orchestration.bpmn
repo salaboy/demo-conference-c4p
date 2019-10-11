@@ -21,7 +21,7 @@
       <bpmn:outgoing>SequenceFlow_00w6bb1</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_0b6z1m2" name="Rejected" sourceRef="ExclusiveGateway_03j900u" targetRef="ServiceTask_1gkkrk3">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">!proposal.approved</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">proposal.approved == false</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:serviceTask id="ServiceTask_1fb84mt" name="Send Approval Via Email">
       <bpmn:extensionElements>
@@ -31,7 +31,7 @@
       <bpmn:outgoing>SequenceFlow_0lgw9sp</bpmn:outgoing>
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="SequenceFlow_15sra6x" name="Approved" sourceRef="ExclusiveGateway_03j900u" targetRef="ServiceTask_1fb84mt">
-      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">proposal.approved</bpmn:conditionExpression>
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">proposal.approved == true</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:serviceTask id="ServiceTask_1cgvnad" name="Publish to Agenda">
       <bpmn:extensionElements>
