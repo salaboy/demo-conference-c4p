@@ -31,7 +31,8 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    private static final String agendaService = "http://demo-conference-agenda";
+    private static final String AGENDA_SERVICE = "http://demo-conference-agenda";
+    private static final String EMAIL_SERVICE = "http://demo-conference-email";
 
     @Value("${version:0.0.0}")
     private String version;
@@ -79,12 +80,16 @@ public class DemoApplication {
             proposal.setStatus(ProposalStatus.DECIDED);
             client.newPublishMessageCommand().messageName("DecisionMade").correlationKey(proposal.getId())
                     .variables(Collections.singletonMap("proposal", proposal)).send().join();
+
+            HttpEntity<Proposal> requestEmail = new HttpEntity<>(proposal);
+            restTemplate.postForEntity(EMAIL_SERVICE, requestEmail, String.class);
+            
             proposals.add(proposal);
             emitEvent("> Notify Speaker Event (via email: " + proposal.getEmail() + " -> " + ((decision.isApproved()) ? "Approved" : "Rejected") + ")");
             if (decision.isApproved()) {
                 emitEvent("> Add Proposal To Agenda Event ");
-                HttpEntity<AgendaItem> request = new HttpEntity<>(new AgendaItem(proposal.getTitle(), proposal.getAuthor(), new Date()));
-                restTemplate.postForEntity(agendaService, request, String.class);
+                HttpEntity<AgendaItem> requestAgenda = new HttpEntity<>(new AgendaItem(proposal.getTitle(), proposal.getAuthor(), new Date()));
+                restTemplate.postForEntity(AGENDA_SERVICE, requestAgenda, String.class);
             }
         } else {
             emitEvent(" Proposal Not Found Event (" + id + ")");
