@@ -4,10 +4,10 @@ import com.salaboy.conferences.c4p.model.AgendaItem;
 import com.salaboy.conferences.c4p.model.Proposal;
 import com.salaboy.conferences.c4p.model.ProposalDecision;
 import com.salaboy.conferences.c4p.model.ProposalStatus;
-import io.zeebe.client.ZeebeClient;
-import io.zeebe.client.api.response.DeploymentEvent;
 import io.zeebe.client.api.response.WorkflowInstanceEvent;
 import io.zeebe.spring.client.EnableZeebeClient;
+import io.zeebe.spring.client.ZeebeClientLifecycle;
+import io.zeebe.spring.client.annotation.ZeebeDeployment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -16,16 +16,16 @@ import org.springframework.http.HttpEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.PostConstruct;
 import java.util.*;
 
 @SpringBootApplication
 @RestController
 @EnableZeebeClient
+@ZeebeDeployment(classPathResource = "c4p-orchestration.bpmn")
 public class DemoApplication {
 
     @Autowired
-    private ZeebeClient zeebeClient;
+    private ZeebeClientLifecycle client;
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
@@ -41,11 +41,6 @@ public class DemoApplication {
 
     private Set<Proposal> proposals = new HashSet<>();
 
-    @PostConstruct
-    public void init() {
-        DeploymentEvent deploymentEvent = zeebeClient.newDeployCommand().addResourceFromClasspath("c4p-orchestration.bpmn").send().join();
-        emitEvent("> C4P Process Deployed Event");
-    }
 
     @GetMapping("/info")
     public String infoWithVersion() {
@@ -54,7 +49,7 @@ public class DemoApplication {
 
     @PostMapping()
     public void newProposal(@RequestBody Proposal proposal) {
-        WorkflowInstanceEvent instance = zeebeClient.newCreateInstanceCommand()
+        WorkflowInstanceEvent instance = client.newCreateInstanceCommand()
                 .bpmnProcessId("C4P")
                 .latestVersion()
                 .variables(Collections.singletonMap("proposal", proposal))
@@ -82,7 +77,7 @@ public class DemoApplication {
             Proposal proposal = proposalOptional.get();
             proposal.setApproved(decision.isApproved());
             proposal.setStatus(ProposalStatus.DECIDED);
-            zeebeClient.newPublishMessageCommand().messageName("DecisionMade").correlationKey("proposal.id")
+            client.newPublishMessageCommand().messageName("DecisionMade").correlationKey("proposal.id")
                     .variables(Collections.singletonMap("proposal", proposal)).send().join();
             proposals.add(proposal);
             emitEvent("> Notify Speaker Event (via email: " + proposal.getEmail() + " -> " + ((decision.isApproved()) ? "Approved" : "Rejected") + ")");
