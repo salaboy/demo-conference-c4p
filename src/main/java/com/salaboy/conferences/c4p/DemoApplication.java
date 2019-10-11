@@ -77,7 +77,7 @@ public class DemoApplication {
             Proposal proposal = proposalOptional.get();
             proposal.setApproved(decision.isApproved());
             proposal.setStatus(ProposalStatus.DECIDED);
-            client.newPublishMessageCommand().messageName("DecisionMade").correlationKey("proposal.id")
+            client.newPublishMessageCommand().messageName("DecisionMade").correlationKey(proposal.getId())
                     .variables(Collections.singletonMap("proposal", proposal)).send().join();
             proposals.add(proposal);
             emitEvent("> Notify Speaker Event (via email: " + proposal.getEmail() + " -> " + ((decision.isApproved()) ? "Approved" : "Rejected") + ")");
