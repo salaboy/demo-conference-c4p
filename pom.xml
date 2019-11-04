@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.salaboy.conferences</groupId>
     <artifactId>conference-c4p</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.37</version>
     <name>Conference C4P Service</name>
     <description>Conference C4P Service</description>
 
