@@ -1,20 +1,20 @@
 
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-559l8[0m
-{"level":"warn","ts":1572876717.2881687,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
-{"level":"info","ts":1572876717.2886326,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-44vdz[0m
+{"level":"warn","ts":1572971533.09144,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572971533.092102,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
 
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-827lp[0m
-{"level":"warn","ts":1572876718.175166,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
-{"level":"info","ts":1572876718.1764326,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-dlsqv[0m
+{"level":"warn","ts":1572971534.1362028,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1572971534.141276,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
 
 Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
 
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-salaboy-demo-conference-c4p-mas-565v2[0m
-{"level":"warn","ts":1572876726.304827,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
-{"level":"info","ts":1572876727.544177,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/*******/demo-conference-c4p.git @ v0.0.37 in path /workspace/source"}
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-salaboy-demo-conference-c4p-mas-9zzck[0m
+{"level":"warn","ts":1572971546.2244675,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1572971547.5166225,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/*******/demo-conference-c4p.git @ v0.0.42 in path /workspace/source"}
 
 Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
-Using SHAs from PULL_REFS=master:f217e4fd66f46f23b51d660c7b9775a964a470da
+Using SHAs from PULL_REFS=master:6ab633b338aadbadee72f2c2172ba09746afb464
 WARNING: no SHAs to merge, falling back to initial cloned commit
 
 Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
@@ -26,7 +26,7 @@ OpenJDK 64-Bit Server VM warning: If the number of processors is expected to inc
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ---------------< com.*******.conferences:conference-c4p >---------------
-[INFO] Building Conference C4P Service 0.0.37
+[INFO] Building Conference C4P Service 0.0.42
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ conference-c4p ---
@@ -51,22 +51,22 @@ OpenJDK 64-Bit Server VM warning: If the number of processors is expected to inc
 [INFO] No tests to run.
 [INFO] 
 [INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ conference-c4p ---
-[INFO] Building jar: /workspace/source/target/conference-c4p-0.0.37.jar
+[INFO] Building jar: /workspace/source/target/conference-c4p-0.0.42.jar
 [INFO] 
 [INFO] --- spring-boot-maven-plugin:2.1.9.RELEASE:repackage (repackage) @ conference-c4p ---
 [INFO] Replacing main artifact with repackaged archive
 [INFO] 
 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ conference-c4p ---
-[INFO] Installing /workspace/source/target/conference-c4p-0.0.37.jar to /home/jenkins/.mvnrepository/com/*******/conferences/conference-c4p/0.0.37/conference-c4p-0.0.37.jar
-[INFO] Installing /workspace/source/pom.xml to /home/jenkins/.mvnrepository/com/*******/conferences/conference-c4p/0.0.37/conference-c4p-0.0.37.pom
+[INFO] Installing /workspace/source/target/conference-c4p-0.0.42.jar to /home/jenkins/.mvnrepository/com/*******/conferences/conference-c4p/0.0.42/conference-c4p-0.0.42.jar
+[INFO] Installing /workspace/source/pom.xml to /home/jenkins/.mvnrepository/com/*******/conferences/conference-c4p/0.0.42/conference-c4p-0.0.42.pom
 [INFO] 
 [INFO] --- maven-deploy-plugin:2.8.2:deploy (default-deploy) @ conference-c4p ---
 [INFO] Using alternate deployment repository local-nexus::default::http://nexus/repository/maven-releases/
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  20.557 s
-[INFO] Finished at: 2019-11-04T14:12:31Z
+[INFO] Total time:  22.653 s
+[INFO] Finished at: 2019-11-05T16:32:54Z
 [INFO] ------------------------------------------------------------------------
 
 Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-skaffold-version[0m
@@ -74,16 +74,16 @@ v0.38.0
 
 Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
 [36mINFO[0m[0000] Downloading base image openjdk:11-jre-slim   
-ERROR: logging before flag.Parse: E1104 14:12:32.680386      11 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
-ERROR: logging before flag.Parse: E1104 14:12:32.683430      11 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
-2019/11/04 14:12:32 No matching credentials were found, falling back on anonymous
+ERROR: logging before flag.Parse: E1105 16:32:55.853619       9 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E1105 16:32:55.857486       9 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/11/05 16:32:55 No matching credentials were found, falling back on anonymous
 [36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:9618813d88b3d3570c0a8448e81f3a1b3fb6fecf15466089c82547e31119b397: no such file or directory 
 [36mINFO[0m[0001] Downloading base image openjdk:11-jre-slim   
-2019/11/04 14:12:34 No matching credentials were found, falling back on anonymous
+2019/11/05 16:32:57 No matching credentials were found, falling back on anonymous
 [36mINFO[0m[0002] cmd: EXPOSE                                  
 [36mINFO[0m[0002] Adding exposed port: 8080/tcp                
 [36mINFO[0m[0002] Using files from context: [/workspace/source/pom.xml] 
-[36mINFO[0m[0002] Using files from context: [/workspace/source/target/conference-c4p-0.0.37.jar] 
+[36mINFO[0m[0002] Using files from context: [/workspace/source/target/conference-c4p-0.0.42.jar] 
 [36mINFO[0m[0002] Skipping unpacking as no commands require it. 
 [36mINFO[0m[0002] Taking snapshot of full filesystem...        
 [36mINFO[0m[0002] ENV PORT 8080                                
@@ -97,7 +97,7 @@ ERROR: logging before flag.Parse: E1104 14:12:32.683430      11 metadata.go:159]
 [36mINFO[0m[0002] Using files from context: [/workspace/source/pom.xml] 
 [36mINFO[0m[0002] COPY pom.xml target/lib* /opt/lib/           
 [36mINFO[0m[0002] Taking snapshot of files...                  
-[36mINFO[0m[0002] Using files from context: [/workspace/source/target/conference-c4p-0.0.37.jar] 
+[36mINFO[0m[0002] Using files from context: [/workspace/source/target/conference-c4p-0.0.42.jar] 
 [36mINFO[0m[0002] COPY target/*.jar /opt/app.jar               
 [36mINFO[0m[0002] Taking snapshot of files...                  
 [36mINFO[0m[0003] WORKDIR /opt                                 
@@ -106,27 +106,27 @@ ERROR: logging before flag.Parse: E1104 14:12:32.683430      11 metadata.go:159]
 [36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
 [36mINFO[0m[0003] CMD ["java", "-jar", "app.jar"]              
 [36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
-2019/11/04 14:12:36 existing blob: sha256:e22147996cc08e68d0fa4d4ef9a441eaeef283ff4a2c64d1ef5e31340db246be
-2019/11/04 14:12:36 existing blob: sha256:8d691f585fa8cec0eba196be460cfaffd69939782d6162986c3e0c5225d54f02
-2019/11/04 14:12:36 existing blob: sha256:3da6fe7ff2ef0f58119eb2e8cb12c5c0b471527be95d43274b396f36fc5bbccd
-2019/11/04 14:12:40 pushed blob: sha256:36126d084a6e1f619f0764bfc58eefc256cbe92975b52e8576fd757c70d9fa7a
-2019/11/04 14:12:41 pushed blob: sha256:e52cd25e5439cfe386af0caf4b18f5b0bf6fe8802884fa8aa9c31e875ec6e6a0
-2019/11/04 14:12:42 pushed blob: sha256:8df48a2d4467c539344ccd628b4488b9cfec57321517929f1226eaaec11302ee
-2019/11/04 14:12:42 pushed blob: sha256:cca7f8ba2d1a833b97d587d73b59c1866a56154fb34f7c20ea09a3218a7b16b4
-2019/11/04 14:12:44 gcr.io/camunda-consulting-de/demo-conference-c4p:0.0.37: digest: sha256:fe8cd728a89a4e8bf15d97a2c9d29778fbf56aa1d62f3957050e34eb7e14d053 size: 1243
+2019/11/05 16:32:59 existing blob: sha256:8df48a2d4467c539344ccd628b4488b9cfec57321517929f1226eaaec11302ee
+2019/11/05 16:32:59 existing blob: sha256:8d691f585fa8cec0eba196be460cfaffd69939782d6162986c3e0c5225d54f02
+2019/11/05 16:32:59 existing blob: sha256:e22147996cc08e68d0fa4d4ef9a441eaeef283ff4a2c64d1ef5e31340db246be
+2019/11/05 16:32:59 existing blob: sha256:3da6fe7ff2ef0f58119eb2e8cb12c5c0b471527be95d43274b396f36fc5bbccd
+2019/11/05 16:33:02 pushed blob: sha256:c03390930807e9f93bd9628e90febd239fd52e570e1d86d8c9a200dc33987139
+2019/11/05 16:33:03 pushed blob: sha256:40cce847ce72d59068b6a1c79dd13ecd2fafcdf0114d351e62f627e92cb5311c
+2019/11/05 16:33:04 pushed blob: sha256:90deafc188789f47829f0ddf7258ef76f710f24418d050f394e6269b54d36246
+2019/11/05 16:33:05 gcr.io/camunda-consulting-de/demo-conference-c4p:0.0.42: digest: sha256:3a59317613129fb883667259dcf0dfeeec92ca2424080c11e387144aceb08843 size: 1243
 
 Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
 no CVE provider running in the current ** namespace so skip adding image to be analysed
 
 Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
 Converted /workspace/source/charts/demo-conference-c4p to an unshallow repository
-Generating change log from git ref 90bf80050b3d1fdda921df651d65ab2624ccb110 => c7e7a0ca6a5a4e72ea8931201b6008841fb509ab
-WARNING: No release found for *******/demo-conference-c4p and tag v0.0.37 so creating a new release
-Updated the release information at https://github.com/*******/demo-conference-c4p/releases/tag/v0.0.37
+Generating change log from git ref 4be762fc845c849a5dcac3e719a4d0911994a506 => 2123ff758c3db033fe68d6c5ab48251738f32a4f
+WARNING: No release found for *******/demo-conference-c4p and tag v0.0.42 so creating a new release
+Updated the release information at https://github.com/*******/demo-conference-c4p/releases/tag/v0.0.42
 generated: /workspace/source/charts/demo-conference-c4p/templates/release.yaml
-Created Release demo-conference-c4p-0-0-37 resource in namespace **
-Updating PipelineActivity *******-demo-conference-c4p-master-1 with version 0.0.37
-Updated PipelineActivities *******-demo-conference-c4p-master-1 with release notes URL: https://github.com/*******/demo-conference-c4p/releases/tag/v0.0.37
+Created Release demo-conference-c4p-0-0-42 resource in namespace **
+Updating PipelineActivity *******-demo-conference-c4p-master-1 with version 0.0.42
+Updated PipelineActivities *******-demo-conference-c4p-master-1 with release notes URL: https://github.com/*******/demo-conference-c4p/releases/tag/v0.0.42
 
 Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
 WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
@@ -135,18 +135,39 @@ Successfully added Helm repository storage.googleapis.com.
 Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
 Successfully added Helm repository jenkins-x-chartmuseum.
 WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
-Uploading chart file demo-conference-c4p-0.0.37.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Uploading chart file demo-conference-c4p-0.0.42.tgz to http://jenkins-x-chartmuseum:8080/api/charts
 Received 201 response: {"saved":true}
 
 Showing logs for build [32msalaboy-demo-conference-c4p-mas-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
 WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
-Promoting app demo-conference-c4p version 0.0.37 to namespace **-staging
-Created Pull Request: https://github.com/*******/environment-soujava-webinar-staging/pull/4
-Added label updatebot to Pull Request https://github.com/*******/environment-soujava-webinar-staging/pull/4
-got git provider status pending from PR https://github.com/*******/environment-soujava-webinar-staging/pull/4
-got git provider status pending from PR https://github.com/*******/environment-soujava-webinar-staging/pull/4
-got git provider status pending from PR https://github.com/*******/environment-soujava-webinar-staging/pull/4
-got git provider status pending from PR https://github.com/*******/environment-soujava-webinar-staging/pull/4
-Pull Request https://github.com/*******/environment-soujava-webinar-staging/pull/4 is merged at sha f5bbd47fecfd267bb2ec8473a5a427940854a40d
+Promoting app demo-conference-c4p version 0.0.42 to namespace **-staging
+Created Pull Request: https://github.com/*******/environment-soujava-**-staging/pull/6
+Added label updatebot to Pull Request https://github.com/*******/environment-soujava-**-staging/pull/6
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-soujava-**-staging/pull/6 ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42 Could not find a status for repository *******/environment-soujava-**-staging with ref 36f506eb2f800e4db35ff87cb8a1b202d53fbd42
+got git provider status pending from PR https://github.com/*******/environment-soujava-**-staging/pull/6
+got git provider status pending from PR https://github.com/*******/environment-soujava-**-staging/pull/6
+got git provider status pending from PR https://github.com/*******/environment-soujava-**-staging/pull/6
+got git provider status pending from PR https://github.com/*******/environment-soujava-**-staging/pull/6
+got git provider status pending from PR https://github.com/*******/environment-soujava-**-staging/pull/6
+Pull Request https://github.com/*******/environment-soujava-**-staging/pull/6 is merged at sha d09b0b4b2d991d36091f6902f32c3085b8d74253
 Pull Request merged but we are not waiting for the update pipeline to complete!
 WARNING: Could not find the service URL in namespace **-staging for names demo-conference-c4p, **-demo-conference-c4p, **-staging-demo-conference-c4p
