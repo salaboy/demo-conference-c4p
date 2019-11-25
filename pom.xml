@@ -15,9 +15,11 @@
     <description>Conference C4P Service</description>
 
     <properties>
-        <java.version>11</java.version>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
+        <version.java>11</version.java>
+        <java.version>${version.java}</java.version>
+
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <zeebe.version>0.7.0</zeebe.version>
     </properties>
 
