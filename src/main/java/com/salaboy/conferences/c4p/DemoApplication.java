@@ -4,6 +4,10 @@ import com.salaboy.conferences.c4p.model.AgendaItem;
 import com.salaboy.conferences.c4p.model.Proposal;
 import com.salaboy.conferences.c4p.model.ProposalDecision;
 import com.salaboy.conferences.c4p.model.ProposalStatus;
+import io.zeebe.spring.client.EnableZeebeClient;
+import io.zeebe.spring.client.ZeebeClientLifecycle;
+import io.zeebe.spring.client.annotation.ZeebeDeployment;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +19,8 @@ import java.util.*;
 
 @SpringBootApplication
 @RestController
+@EnableZeebeClient
+@ZeebeDeployment(classPathResource = "c4p-orchestration.bpmn")
 public class DemoApplication {
 
     public static void main(String[] args) {
@@ -26,6 +32,10 @@ public class DemoApplication {
 
     @Value("${version:0.0.0}")
     private String version;
+
+    @Autowired
+    private ZeebeClientLifecycle client;
+
 
     private RestTemplate restTemplate = new RestTemplate();
 
@@ -40,6 +50,11 @@ public class DemoApplication {
     @PostMapping()
     public void newProposal(@RequestBody Proposal proposal) {
         proposals.add(proposal);
+        client.newCreateInstanceCommand()
+                .bpmnProcessId("C4P")
+                .latestVersion()
+                .variables(Collections.singletonMap("proposal", proposal))
+                .send();
         emitEvent("> New Proposal Received Event ( " + proposal + ")");
     }
 
@@ -65,31 +80,32 @@ public class DemoApplication {
             proposal.setStatus(ProposalStatus.DECIDED);
             proposals.add(proposal);
 
-            //Only if it is Approved create a new Agenda Item into the Agenda Service
-            if (decision.isApproved()) {
-                createAgendaItem(proposal);
-            }
-
-            // Notify Potential Speaker By Email
-            notifySpeakerByEmail(decision, proposal);
-
+//            //Only if it is Approved create a new Agenda Item into the Agenda Service
+//            if (decision.isApproved()) {
+//                createAgendaItem(proposal);
+//            }
+//
+//            // Notify Potential Speaker By Email
+//            notifySpeakerByEmail(decision, proposal);
+            client.newPublishMessageCommand().messageName("DecisionMade").correlationKey(proposal.getId())
+                    .variables(Collections.singletonMap("proposal", proposal)).send();
         } else {
             emitEvent(" Proposal Not Found Event (" + id + ")");
         }
 
     }
 
-    private void createAgendaItem(Proposal proposal) {
-        emitEvent("> Add Proposal To Agenda Event ");
-        HttpEntity<AgendaItem> requestAgenda = new HttpEntity<>(new AgendaItem(proposal.getTitle(), proposal.getAuthor(), new Date()));
-        restTemplate.postForEntity(AGENDA_SERVICE, requestAgenda, String.class);
-    }
-
-    private void notifySpeakerByEmail(@RequestBody ProposalDecision decision, Proposal proposal) {
-        emitEvent("> Notify Speaker Event (via email: " + proposal.getEmail() + " -> " + ((decision.isApproved()) ? "Approved" : "Rejected") + ")");
-        HttpEntity<Proposal> requestEmail = new HttpEntity<>(proposal);
-        restTemplate.postForEntity(EMAIL_SERVICE, requestEmail, String.class);
-    }
+//    private void createAgendaItem(Proposal proposal) {
+//        emitEvent("> Add Proposal To Agenda Event ");
+//        HttpEntity<AgendaItem> requestAgenda = new HttpEntity<>(new AgendaItem(proposal.getTitle(), proposal.getAuthor(), new Date()));
+//        restTemplate.postForEntity(AGENDA_SERVICE, requestAgenda, String.class);
+//    }
+//
+//    private void notifySpeakerByEmail(@RequestBody ProposalDecision decision, Proposal proposal) {
+//        emitEvent("> Notify Speaker Event (via email: " + proposal.getEmail() + " -> " + ((decision.isApproved()) ? "Approved" : "Rejected") + ")");
+//        HttpEntity<Proposal> requestEmail = new HttpEntity<>(proposal);
+//        restTemplate.postForEntity(EMAIL_SERVICE, requestEmail, String.class);
+//    }
 
     private void emitEvent(String content) {
         System.out.println(content);
