@@ -1,1 +1,4 @@
-buildPack: maven
+buildPack: maven-java11
+pipelineConfig:
+  agent:
+    image: maven-java11
