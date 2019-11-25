@@ -1,32 +1,32 @@
 
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-c4drm[0m
-{"level":"warn","ts":1572947203.657205,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
-{"level":"info","ts":1572947203.6595087,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-h9cj8-5[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-2b92z[0m
+{"level":"warn","ts":1574693209.6090443,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1574693209.6098661,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
 
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-tw2rj[0m
-{"level":"warn","ts":1572947204.950298,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
-{"level":"info","ts":1572947204.9517982,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-h9cj8-5[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-wzttc[0m
+{"level":"warn","ts":1574693210.5569348,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1574693210.5585692,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
 
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-h9cj8-5[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
 
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-salaboy-demo-conference-c4p-mas-zzw2w[0m
-{"level":"warn","ts":1572947213.009951,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
-{"level":"info","ts":1572947214.3084097,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/*******/demo-conference-c4p.git @ v0.0.41 in path /workspace/source"}
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-h9cj8-5[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-salaboy-demo-conference-c4p-mas-zp82v[0m
+{"level":"warn","ts":1574693218.6132727,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1574693219.9139092,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/*******/demo-conference-c4p.git @ v0.0.48 in path /workspace/source"}
 
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
-Using SHAs from PULL_REFS=master:6ab633b338aadbadee72f2c2172ba09746afb464
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-h9cj8-5[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:0cd87c5c7a3e98ce53964a048b180e26fc85f1c5
 WARNING: no SHAs to merge, falling back to initial cloned commit
 
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-h9cj8-5[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
 Generated Git credentials file /workspace/xdg_config/git/credentials
 
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-mvn-deploy[0m
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-h9cj8-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-mvn-deploy[0m
 Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
 OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] ---------------< com.*******.conferences:conference-c4p >---------------
-[INFO] Building Conference C4P Service 0.0.41
+[INFO] Building Conference C4P Service 0.0.48
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ conference-c4p ---
@@ -39,122 +39,18 @@ OpenJDK 64-Bit Server VM warning: If the number of processors is expected to inc
 [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ conference-c4p ---
 [INFO] Changes detected - recompiling the module!
 [INFO] Compiling 5 source files to /workspace/source/target/classes
-[INFO] 
-[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ conference-c4p ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /workspace/source/src/test/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ conference-c4p ---
-[INFO] No sources to compile
-[INFO] 
-[INFO] --- maven-surefire-plugin:3.0.0-M1:test (default-test) @ conference-c4p ---
-[INFO] No tests to run.
-[INFO] 
-[INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ conference-c4p ---
-[INFO] Building jar: /workspace/source/target/conference-c4p-0.0.41.jar
-[INFO] 
-[INFO] --- spring-boot-maven-plugin:2.1.9.RELEASE:repackage (repackage) @ conference-c4p ---
-[INFO] Replacing main artifact with repackaged archive
-[INFO] 
-[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ conference-c4p ---
-[INFO] Installing /workspace/source/target/conference-c4p-0.0.41.jar to /home/jenkins/.mvnrepository/com/*******/conferences/conference-c4p/0.0.41/conference-c4p-0.0.41.jar
-[INFO] Installing /workspace/source/pom.xml to /home/jenkins/.mvnrepository/com/*******/conferences/conference-c4p/0.0.41/conference-c4p-0.0.41.pom
-[INFO] 
-[INFO] --- maven-deploy-plugin:2.8.2:deploy (default-deploy) @ conference-c4p ---
-[INFO] Using alternate deployment repository local-nexus::default::http://nexus/repository/maven-releases/
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
+[INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  17.672 s
-[INFO] Finished at: 2019-11-05T09:47:15Z
+[INFO] Total time:  19.694 s
+[INFO] Finished at: 2019-11-25T14:47:24Z
 [INFO] ------------------------------------------------------------------------
-
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-skaffold-version[0m
-v0.38.0
-
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
-[36mINFO[0m[0000] Downloading base image openjdk:11-jre-slim   
-ERROR: logging before flag.Parse: E1105 09:47:16.485534      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
-ERROR: logging before flag.Parse: E1105 09:47:16.488019      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
-2019/11/05 09:47:16 No matching credentials were found, falling back on anonymous
-[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:9618813d88b3d3570c0a8448e81f3a1b3fb6fecf15466089c82547e31119b397: no such file or directory 
-[36mINFO[0m[0001] Downloading base image openjdk:11-jre-slim   
-2019/11/05 09:47:17 No matching credentials were found, falling back on anonymous
-[36mINFO[0m[0002] cmd: EXPOSE                                  
-[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
-[36mINFO[0m[0002] Using files from context: [/workspace/source/pom.xml] 
-[36mINFO[0m[0002] Using files from context: [/workspace/source/target/conference-c4p-0.0.41.jar] 
-[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
-[36mINFO[0m[0002] Taking snapshot of full filesystem...        
-[36mINFO[0m[0002] ENV PORT 8080                                
-[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
-[36mINFO[0m[0002] ENV CLASSPATH /opt/lib                       
-[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
-[36mINFO[0m[0002] EXPOSE 8080                                  
-[36mINFO[0m[0002] cmd: EXPOSE                                  
-[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
-[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
-[36mINFO[0m[0002] Using files from context: [/workspace/source/pom.xml] 
-[36mINFO[0m[0002] COPY pom.xml target/lib* /opt/lib/           
-[36mINFO[0m[0002] Taking snapshot of files...                  
-[36mINFO[0m[0002] Using files from context: [/workspace/source/target/conference-c4p-0.0.41.jar] 
-[36mINFO[0m[0002] COPY target/*.jar /opt/app.jar               
-[36mINFO[0m[0002] Taking snapshot of files...                  
-[36mINFO[0m[0002] WORKDIR /opt                                 
-[36mINFO[0m[0002] cmd: workdir                                 
-[36mINFO[0m[0002] Changed working directory to /opt            
-[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
-[36mINFO[0m[0002] CMD ["java", "-jar", "app.jar"]              
-[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
-2019/11/05 09:47:19 existing blob: sha256:e22147996cc08e68d0fa4d4ef9a441eaeef283ff4a2c64d1ef5e31340db246be
-2019/11/05 09:47:19 existing blob: sha256:8df48a2d4467c539344ccd628b4488b9cfec57321517929f1226eaaec11302ee
-2019/11/05 09:47:19 existing blob: sha256:3da6fe7ff2ef0f58119eb2e8cb12c5c0b471527be95d43274b396f36fc5bbccd
-2019/11/05 09:47:19 existing blob: sha256:8d691f585fa8cec0eba196be460cfaffd69939782d6162986c3e0c5225d54f02
-2019/11/05 09:47:23 pushed blob: sha256:a565e4d207bba81a951c3e2cffe129ac53db6e4d587973c33150dd8f06a1e128
-2019/11/05 09:47:23 pushed blob: sha256:8460c2a9558600e79d5908713c2c18fb524802d37a1551a4efe8b9bdd3be56e8
-2019/11/05 09:47:24 pushed blob: sha256:347171b55e9e743d13b3cf8bc6525050cd7b0ba445cfb9b1613f6b7e001c8932
-2019/11/05 09:47:26 gcr.io/camunda-consulting-de/demo-conference-c4p:0.0.41: digest: sha256:c0056aa90bdcc7e7b5b8bd53ff3e3f412ef0bdd79b27d5ae10744b842fff8bb5 size: 1243
-
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
-no CVE provider running in the current ** namespace so skip adding image to be analysed
-
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
-Converted /workspace/source/charts/demo-conference-c4p to an unshallow repository
-Generating change log from git ref b808fb14824786747848015ace8bb94404ad9625 => 4be762fc845c849a5dcac3e719a4d0911994a506
-Associating user x-0 in users.jenkins.io with email *******@gmail.com to git GitProvider user with login -0 as emails match
-Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
-WARNING: Failed to enrich commit 6ab633b338aadbadee72f2c2172ba09746afb464 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
-Associating user x-0 in users.jenkins.io with email *******@gmail.com to git GitProvider user with login -0 as emails match
-Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
-WARNING: Failed to enrich commit 6ab633b338aadbadee72f2c2172ba09746afb464 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
-Finding issues in commit messages using git format
-WARNING: No release found for *******/demo-conference-c4p and tag v0.0.41 so creating a new release
-Updated the release information at https://github.com/*******/demo-conference-c4p/releases/tag/v0.0.41
-generated: /workspace/source/charts/demo-conference-c4p/templates/release.yaml
-Created Release demo-conference-c4p-0-0-41 resource in namespace **
-Updating PipelineActivity *******-demo-conference-c4p-master-5 with version 0.0.41
-Updated PipelineActivities *******-demo-conference-c4p-master-5 with release notes URL: https://github.com/*******/demo-conference-c4p/releases/tag/v0.0.41
-
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
-WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
-Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
-Successfully added Helm repository storage.googleapis.com.
-Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
-Successfully added Helm repository jenkins-x-chartmuseum.
-WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
-Uploading chart file demo-conference-c4p-0.0.41.tgz to http://jenkins-x-chartmuseum:8080/api/charts
-Received 201 response: {"saved":true}
-
-Showing logs for build [32msalaboy-demo-conference-c4p-mas-sxt8g-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
-WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
-Promoting app demo-conference-c4p version 0.0.41 to namespace **-staging
-Created Pull Request: https://github.com/*******/environment-soujava-webinar-staging/pull/12
-Added label updatebot to Pull Request https://github.com/*******/environment-soujava-webinar-staging/pull/12
-got git provider status pending from PR https://github.com/*******/environment-soujava-webinar-staging/pull/12
-got git provider status pending from PR https://github.com/*******/environment-soujava-webinar-staging/pull/12
-got git provider status pending from PR https://github.com/*******/environment-soujava-webinar-staging/pull/12
-got git provider status pending from PR https://github.com/*******/environment-soujava-webinar-staging/pull/12
-got git provider status pending from PR https://github.com/*******/environment-soujava-webinar-staging/pull/12
-got git provider status pending from PR https://github.com/*******/environment-soujava-webinar-staging/pull/12
-Pull Request https://github.com/*******/environment-soujava-webinar-staging/pull/12 is merged at sha 86510d0f0baafe066a49ed5a20eef73f697762b3
-Pull Request merged but we are not waiting for the update pipeline to complete!
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project conference-c4p: Fatal error compiling: invalid target release: 11 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-mvn-deploy'. The execution of the pipeline has stopped.[0m
