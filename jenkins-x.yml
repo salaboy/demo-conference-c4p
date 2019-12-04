@@ -2,3 +2,8 @@ buildPack: maven-java11
 pipelineConfig:
   agent:
     image: maven-java11
+  pipelines:
+    release:
+      promote:
+        steps:
+        - command: jx step create pr chart --name demo-conference-cp4 --version $VERSION  --repo https://github.com/salaboy/demo-conference-app-chart.git
