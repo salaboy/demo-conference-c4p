@@ -1,0 +1,164 @@
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-24d5k[0m
+{"level":"warn","ts":1576695898.2033145,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1576695898.2038443,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-2lttp[0m
+{"level":"warn","ts":1576695899.5832734,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1576695899.5849833,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-salaboy-demo-conference-c4p-mas-fgzhm[0m
+{"level":"warn","ts":1576695907.695484,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1576695909.0411549,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/*******/demo-conference-c4p.git @ v0.0.72 in path /workspace/source"}
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:f336f209c96a30446abaf9a1f18c5f01db6a5c24
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-build-mvn-deploy[0m
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------< com.*******.conferences:conference-c4p >---------------
+[INFO] Building Conference C4P Service 0.0.72
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ conference-c4p ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ conference-c4p ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ conference-c4p ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /workspace/source/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ conference-c4p ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /workspace/source/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ conference-c4p ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M1:test (default-test) @ conference-c4p ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ conference-c4p ---
+[INFO] Building jar: /workspace/source/target/conference-c4p-0.0.72.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.2.0.RELEASE:repackage (repackage) @ conference-c4p ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ conference-c4p ---
+[INFO] Installing /workspace/source/target/conference-c4p-0.0.72.jar to /home/jenkins/.mvnrepository/com/*******/conferences/conference-c4p/0.0.72/conference-c4p-0.0.72.jar
+[INFO] Installing /workspace/source/pom.xml to /home/jenkins/.mvnrepository/com/*******/conferences/conference-c4p/0.0.72/conference-c4p-0.0.72.pom
+[INFO] 
+[INFO] --- maven-deploy-plugin:2.8.2:deploy (default-deploy) @ conference-c4p ---
+[INFO] Using alternate deployment repository local-nexus::default::http://nexus/repository/maven-releases/
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  40.103 s
+[INFO] Finished at: 2019-12-18T19:05:54Z
+[INFO] ------------------------------------------------------------------------
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-build-skaffold-version[0m
+v1.0.0
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image openjdk:11-jre-slim   
+ERROR: logging before flag.Parse: E1218 19:05:55.404234      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E1218 19:05:55.422012      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/12/18 19:05:55 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:1623b24fe088e0aefcfe499da1b8d72f108e16dd906ffdfff570736bfbbb1473: no such file or directory 
+[36mINFO[0m[0001] Downloading base image openjdk:11-jre-slim   
+2019/12/18 19:05:56 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Using files from context: [/workspace/source/pom.xml] 
+[36mINFO[0m[0002] Using files from context: [/workspace/source/target/conference-c4p-0.0.72.jar] 
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] ENV PORT 8080                                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] ENV CLASSPATH /opt/lib                       
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] EXPOSE 8080                                  
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] Using files from context: [/workspace/source/pom.xml] 
+[36mINFO[0m[0002] COPY pom.xml target/lib* /opt/lib/           
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] Using files from context: [/workspace/source/target/conference-c4p-0.0.72.jar] 
+[36mINFO[0m[0002] COPY target/*.jar /opt/app.jar               
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0003] WORKDIR /opt                                 
+[36mINFO[0m[0003] cmd: workdir                                 
+[36mINFO[0m[0003] Changed working directory to /opt            
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0003] CMD ["java", "-jar", "app.jar"]              
+[36mINFO[0m[0003] No files changed in this command, skipping snapshotting. 
+2019/12/18 19:05:59 existing blob: sha256:2f1dc2bdcfe193ce54affa45170354ca76667c40f8cf536b6282dd379e17e24a
+2019/12/18 19:05:59 existing blob: sha256:eec880363624c27ef6cc7e146eb42bb15e84efbfe8f365f8ed8718804b44c61b
+2019/12/18 19:05:59 existing blob: sha256:000eee12ec04cc914bf96e8f5dee7767510c2aca3816af6078bd9fbe3150920c
+2019/12/18 19:05:59 existing blob: sha256:8992c959a11ddefb3735efc010a2d670c008659dccb4712b85b3428c25437a0d
+2019/12/18 19:06:02 pushed blob: sha256:fac6f942c58ecf511177bc3f5fc4d097b1543e25dcfa92c335bb3d7b69fedb98
+2019/12/18 19:06:03 pushed blob: sha256:35e6885fe5fab904fe9a8e46376f14d3cca70d38d7f3478ed69cea53631b6f8c
+2019/12/18 19:06:06 pushed blob: sha256:09346c09e7ed6fe22a4a4abfd1e9ff0656ddc7f0db9f561ddd019ccf83fd091c
+2019/12/18 19:06:07 gcr.io/camunda-consulting-de/demo-conference-c4p:0.0.72: digest: sha256:021123c4c7811c66cff3ac62ba2c5dc63eaa0aafc95d863d0ea36316e929bb83 size: 1243
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/demo-conference-c4p to an unshallow repository
+Generating change log from git ref 5ab696375c227d315713780663226624017c2170 => b5be76a9579053bc6156439eb3f4cfd5fcd62cbe
+Associating user x-0 in users.jenkins.io with email *******@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit f336f209c96a30446abaf9a1f18c5f01db6a5c24 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email *******@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit f336f209c96a30446abaf9a1f18c5f01db6a5c24 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for *******/demo-conference-c4p and tag v0.0.72 so creating a new release
+Updated the release information at https://github.com/*******/demo-conference-c4p/releases/tag/v0.0.72
+generated: /workspace/source/charts/demo-conference-c4p/templates/release.yaml
+Created Release demo-conference-c4p-0-0-72 resource in namespace **
+Updating PipelineActivity *******-demo-conference-c4p-master-29 with version 0.0.72
+Updated PipelineActivities *******-demo-conference-c4p-master-29 with release notes URL: https://github.com/*******/demo-conference-c4p/releases/tag/v0.0.72
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file demo-conference-c4p-0.0.72.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app demo-conference-c4p version 0.0.72 to namespace **-staging
+Created Pull Request: https://github.com/*******/environment-webinar-nov-staging/pull/45
+Added label updatebot to Pull Request https://github.com/*******/environment-webinar-nov-staging/pull/45
+got git provider status pending from PR https://github.com/*******/environment-webinar-nov-staging/pull/45
+got git provider status pending from PR https://github.com/*******/environment-webinar-nov-staging/pull/45
+got git provider status pending from PR https://github.com/*******/environment-webinar-nov-staging/pull/45
+Pull Request https://github.com/*******/environment-webinar-nov-staging/pull/45 is merged at sha 21e1443df8ef7f73a7c034bde34307c09dc377ab
+Pull Request merged but we are not waiting for the update pipeline to complete!
+
+Showing logs for build [32msalaboy-demo-conference-c4p-mas-dsz4z-29[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-step10[0m
+Using https://github.com/*******/demo-conference-c4p as source for change discovered from git repo in /workspace/source
+Attempting to cherry pick commits that were on master but not yet pushed
+
+Created Pull Request: https://github.com/*******/demo-conference-app-chart/pull/13
+Added label updatebot to Pull Request https://github.com/*******/demo-conference-app-chart/pull/13
